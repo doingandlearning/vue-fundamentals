@@ -3,12 +3,48 @@
   <head>
     <meta charset="UTF-8"/>
     <title>Online Events</title>
-    {# Import Vue.js #}
+    <link rel="stylesheet" href="./assets/styles.css">
+    <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app"></div>
-    {# Import JS #}
+    <div class="top-bar">
+      <h1 class="site-title">Online Events</h1>
+    </div>
+    <div id="app">
+      <div class="container">
+        <div class="left">
+          <img :class="{'soldout': soldOut}" :src="image"/>
+        </div>
+        <div class="right">
+          <h1>{{title.toUpperCase()}}</h1>
+          <p v-if="tickets > 15">On sale now!</p>
+          <p v-else-if="tickets <= 15 && tickets > 0">Tickets running low!</p>
+          <p v-else>Sold out!</p>
+          <p>{{description}}</p>
+          <ul>
+            <li v-for="detail in details" :key="detail">{{detail}}</li>
+          </ul>
+          <ul class="ticketTypes">
+            <li class="ticketSelector" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
+          </ul>
+          <div>
+            <h3>Ticket Types</h3>
+            <div v-for="ticketType in ticketTypes" :key="ticketType.id">
+              <pre>{{JSON.stringify(ticketType)}}</pre>
+              <ticket-details :name="ticketType.name" :tickets="ticketType.tickets"></ticket-details>
+            </div>
+          </div>
+          <button @click="addToCart">Add ticket</button>
+        </div>
+      </div>
+      <div class="cart">Tickets ({{cart}})</div>
+    </div>
+    <!-- Import JS -->
     <script src="./main.js"></script>
+    <script src="./components/TicketDetails.js"></script>
+    <script>
+      const mountedApp = app.mount("#app")
+    </script>
   </body>
 </html>
