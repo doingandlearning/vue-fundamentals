@@ -1,8 +1,8 @@
-console.log("here")
 app.component('ticket-details', {
   props: {
     name: String,
-    tickets: Number
+    tickets: Number,
+    description: String
   },
   template:
     /*html*/
@@ -19,7 +19,7 @@ app.component('ticket-details', {
         <button @click="addToCart">Add</button>
       </div>
     </div>
-     {{ticketsLeft}} left.
+    {{description}}
     </div>
   `,
   data() {
