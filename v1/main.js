@@ -14,7 +14,9 @@ const app = Vue.createApp({
     }
   },
   methods: {
-
+    updateCart(num) {
+      this.cart += num
+    }
   }, computed: {
 
   }

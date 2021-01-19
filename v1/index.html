@@ -31,7 +31,7 @@
           <div>
             <h3>Ticket Types</h3>
             <div v-for="ticketType in ticketTypes" :key="ticketType.id">
-              <ticket-details :name="ticketType.name" :tickets="ticketType.tickets"></ticket-details>
+              <ticket-details @add-to-cart="updateCart" :name="ticketType.name" :tickets="ticketType.tickets"></ticket-details>
             </div>
           </div>
         </div>

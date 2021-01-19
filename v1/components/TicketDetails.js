@@ -12,25 +12,28 @@ app.component('ticket-details', {
     <div>
     <select v-model="ticketsToBuy">
       <option value=0>0</option>
-      <option v-for="number in tickets" :value="number" >{{number}}</option>
+      <option v-for="number in ticketsLeft" :value="number" >{{number}}</option>
     </select>
       <div v-if="ticketsToBuy">
         <p>Add {{ticketsToBuy}} {{name}} tickets to your cart.</p>
         <button @click="addToCart">Add</button>
       </div>
     </div>
-    {{tickets}} left.
+     {{ticketsLeft}} left.
     </div>
   `,
   data() {
     return {
-      ticketsToBuy: 0
+      ticketsToBuy: 0,
+      ticketsLeft: this.tickets
     }
   },
   methods: {
     addToCart() {
-      this.tickets -= this.ticketsToBuy
+      this.ticketsLeft -= this.ticketsToBuy
       this.$emit('add-to-cart', this.ticketsToBuy)
+      this.ticketsToBuy = 0
     }
-  }
+  },
+
 })
