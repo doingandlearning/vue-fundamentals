@@ -7,14 +7,30 @@ app.component('ticket-details', {
   template:
     /*html*/
     `
+    <div>
     <h3>{{name}}</h3>
-    <p>{{tickets}} tickets remaining.</p>
+    <div>
+    <select v-model="ticketsToBuy">
+      <option value=0>0</option>
+      <option v-for="number in tickets" :value="number" >{{number}}</option>
+    </select>
+      <div v-if="ticketsToBuy">
+        <p>Add {{ticketsToBuy}} {{name}} tickets to your cart.</p>
+        <button @click="addToCart">Add</button>
+      </div>
+    </div>
+    {{tickets}} left.
+    </div>
   `,
   data() {
     return {
-      props: {
-
-      }
+      ticketsToBuy: 0
+    }
+  },
+  methods: {
+    addToCart() {
+      this.tickets -= this.ticketsToBuy
+      this.$emit('add-to-cart', this.ticketsToBuy)
     }
   }
 })
