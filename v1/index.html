@@ -26,7 +26,7 @@
             <li v-for="detail in details" :key="detail">{{detail}}</li>
           </ul>
           <ul class="ticketTypes">
-            <li class="ticketSelector" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
+            <li class="ticketSelector" @mouseover="updateImage(type.id)" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
           </ul>
           <div>
             <h3>Ticket Types</h3>
