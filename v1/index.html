@@ -31,7 +31,6 @@
           </ul>
           <div>
             <h3>Ticket Types</h3>
-            {{test}}
             <div v-for="ticketType in ticketTypes" :key="ticketType.id">
               <ticket-details 
               @add-to-cart="updateCart" 

@@ -2,7 +2,8 @@
 const app = Vue.createApp({
   data() {
     return {
-      title: "Comedy Events"
+      title: "Comedy Events",
+      image: "https://via.placeholder.com/200"
     }
   }
 });
