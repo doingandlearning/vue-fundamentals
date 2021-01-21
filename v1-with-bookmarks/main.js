@@ -1,1 +1,8 @@
-const testVariable = "This a test";
+
+const app = Vue.createApp({
+  data() {
+    return {
+      title: "Comedy Events"
+    }
+  }
+});

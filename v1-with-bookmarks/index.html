@@ -8,6 +8,12 @@
     <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
   </head>
   <body>
+    <div id="app">
+      <p>{{title}}</p>
+    </div>
     <script src="./main.js"></script>
+    <script>
+      const mountedApp = app.mount("#app")
+    </script>
   </body>
 </html>
