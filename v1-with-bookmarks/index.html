@@ -6,15 +6,32 @@
     <link rel="stylesheet" href="./assets/styles.css">
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
   </head>
   <body>
-    <div id="app">
-      <img v-bind:src="image"/>
-      <p>{{title}}</p>
+    <div class="top-bar">
+      <h1 class="site-title">Online Events</h1>
     </div>
-    <script src="./main.js"></script>
-    <script>
-      const mountedApp = app.mount("#app")
-    </script>
-  </body>
+    <div id="app">
+      <div class="container">
+        <div class="left">
+          <h1>{{title.toUpperCase()}}</h1>
+          <p v-if="tickets > 15">On sale now!</p>
+          <p v-else-if="tickets <= 15 && tickets > 0">Tickets running low!</p>
+          <p v-else>Sold out!</p>
+          <p>{{description}}</p>
+        </div>
+        <div class="right">
+          <img :src="image"/>
+        </div>
+      </div>
+    </div>
+    <div class="cart">Tickets ({{cart}})</div>
+  </div>
+  <!-- Import JS -->
+  <script src="./main.js"></script>
+  <script>
+    const mountedApp = app.mount("#app")
+  </script>
+</body>
 </html>
