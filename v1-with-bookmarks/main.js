@@ -5,6 +5,7 @@ const app = Vue.createApp({
       title: "Comedy Events",
       image: "https://via.placeholder.com/200",
       details: ["Funny comics", "Mime artistry", "Satire", "Sketches"],
+      soldOut: false
     }
   }
 });
