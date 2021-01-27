@@ -23,6 +23,9 @@
           <ul>
             <li v-for="detail in details" :key="detail">{{detail}}</li>
           </ul>
+          <ul class="ticketTypes">
+            <li class="ticketSelector" @mouseover="updateImage(type.id)" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
+          </ul>
         </div>
         <div class="right">
           <img :class="[{soldout: soldOut}]" :src="image"/>
@@ -30,6 +33,7 @@
       </div>
     </div>
     <div class="cart">Tickets ({{cart}})</div>
+    <button v-on:click="cart++">+</button>
   </div>
   <!-- Import JS -->
   <script src="./main.js"></script>
