@@ -14,6 +14,15 @@ const app = Vue.createApp({
         { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/199/199", tickets: 40, description: "Go all in - this is the gold level!" }
       ],
     }
+  },
+  methods: {
+    updateCart() {
+      this.cart++
+      this.tickets--
+    },
+    changeImage(id) {
+      this.image = this.ticketTypes.filter(type => type.id === id)[0].image
+    }
   }
 });
 
