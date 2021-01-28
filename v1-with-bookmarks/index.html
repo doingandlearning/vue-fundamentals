@@ -26,6 +26,14 @@
           <ul class="ticketTypes">
             <li class="ticketSelector" @mouseover="updateImage(type.id)" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
           </ul>
+          <div v-for="ticketType in ticketTypes" :key="ticketType.id">
+            <ticket-details 
+              @add-to-cart="updateCart" 
+              :name="ticketType.name" 
+              :tickets="ticketType.tickets"
+              :description="ticketType.description"
+              ></ticket-details>
+          </div>
         </div>
         <div class="right">
           <img :class="[{soldout: soldOut}]" :src="image"/>
