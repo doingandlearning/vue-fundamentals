@@ -31,6 +31,7 @@ app.component('ticket-details', {
   methods: {
     addToCart() {
       this.ticketsLeft -= this.ticketsToBuy
+      this.$emit('add-to-cart', this.ticketsToBuy, this.name)
       this.ticketsToBuy = 0
     }
   },

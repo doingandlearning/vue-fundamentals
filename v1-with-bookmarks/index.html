@@ -39,9 +39,8 @@
           <img :class="[{soldout: soldOut}]" :src="image"/>
         </div>
       </div>
+      <div class="cart">Tickets ({{cart.length}})</div>
     </div>
-    <div class="cart">Tickets ({{cart}})</div>
-    <button v-on:click="updateCart">+</button>
   </div>
   <!-- Import JS -->
   <script src="./main.js"></script>
