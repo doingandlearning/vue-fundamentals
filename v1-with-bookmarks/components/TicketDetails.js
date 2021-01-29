@@ -10,23 +10,29 @@ app.component('ticket-details', {
     <div>
     <h3>{{name}}</h3>
     <div>
-    <select>
+    <select v-model="ticketsToBuy">
       <option value=0>0</option>
       <option v-for="number in ticketsLeft" :value="number" >{{number}}</option>
     </select>
-    <button @click="addTicket">-</button>
+      <div v-if="ticketsToBuy">
+        <p>Add {{ticketsToBuy}} {{name}} tickets to your cart.</p>
+        <button @click="addToCart">Add</button>
+      </div>
     </div>
     {{description}}
     </div>
   `,
   data() {
     return {
+      ticketsToBuy: 0,
       ticketsLeft: this.tickets
     }
   },
   methods: {
-    addTicket() {
-      this.ticketsLeft -= 1
+    addToCart() {
+      this.ticketsLeft -= this.ticketsToBuy
+      this.ticketsToBuy = 0
     }
-  }
+  },
+
 })
