@@ -23,6 +23,9 @@
           <ul>
             <li v-for="detail in details" :key="detail">{{detail}}</li>
           </ul>
+          <div v-if="error" class="error">
+            Sorry. We're having trouble contacting our server. Please try again.
+            </div>
           <ul class="ticketTypes">
             <li class="ticketSelector" @mouseover="updateImage(type.id)" v-for="type in ticketTypes" :key="type.id">{{type.name}}</li>
           </ul>

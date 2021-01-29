@@ -8,6 +8,7 @@ const app = Vue.createApp({
       tickets: 10,
       cart: [],
       ticketTypes: null,
+      error: false
     }
   },
   methods: {
@@ -22,6 +23,7 @@ const app = Vue.createApp({
   mounted() {
     axios.get("https://raw.githubusercontent.com/doingandlearning/vue-fundamentals/main/data.json")
       .then(data => this.ticketTypes = data)
+      .catch(err => this.error = err)
   }
 });
 

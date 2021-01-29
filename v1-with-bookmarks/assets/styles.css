@@ -64,3 +64,9 @@
   margin-top: 8px;
   border: 2px solid #d8d8d8;
 }
+
+.error {
+  color: red;
+  border: 1px solid red;
+  padding: 4px;
+}
