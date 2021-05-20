@@ -21,7 +21,8 @@ const app = Vue.createApp({
     updateImage(id) {
       this.image = this.ticketTypes.filter(type => type.id === id)[0].image
     }
-  }, computed: {
+  },
+  computed: {
     tickets() {
       return this.ticketTypes.map(ticket => ticket.tickets).reduce((a, c) => a + c) - this.cart
     },

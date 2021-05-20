@@ -1,0 +1,76 @@
+.top-bar {
+  background: #c4c4c4;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.site-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 31px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.left {
+  width: 70%;
+  margin-top: 10px;
+}
+
+.right {
+  width: 30%;
+  margin-top: 10px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 960px;
+
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.cart {
+  position: absolute;
+  width: 140px;
+  height: 67px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  top: 15px;
+  background: #c4c4c4;
+  border: 1px black solid;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.ticketTypes {
+  display: flex;
+  list-style: none;
+}
+
+.ticketSelector {
+  margin: 4px;
+  width: 50px;
+  height: 50px;
+  margin-top: 8px;
+  border: 2px solid #d8d8d8;
+}
+
+.sold-out {
+  opacity: 0.2;
+}
+
+.hidden {
+  display: none;
+}

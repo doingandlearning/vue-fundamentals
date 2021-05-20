@@ -8,7 +8,7 @@
       <p>Add {{ticketsToBuy}} {{name}} tickets to your cart.</p>
       <button @click="addToCart">Add</button>
     </div>
-    <p>{{description}}</p>
+    <p > {{description}}</p>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
     tickets: Number,
     description: String
   },
-    data() {
+          data() {
     return {
       ticketsToBuy: 0,
       ticketsLeft: this.tickets
@@ -28,10 +28,11 @@ export default {
   methods: {
     addToCart() {
       this.ticketsLeft -= this.ticketsToBuy
-      this.$emit('add-to-cart', this.ticketsToBuy)
+         this.$emit('add-to-cart', this.ticketsToBuy)
       this.ticketsToBuy = 0
     }
   }
+  
 }
 </script>
 
@@ -45,7 +46,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+     display: inline-block;
   margin: 0 10px;
 }
 a {
